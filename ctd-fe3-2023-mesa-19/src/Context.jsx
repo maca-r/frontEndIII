@@ -40,13 +40,7 @@ const LanguageContext = ({children}) => {
     
     const handleChangeLA = (event) => {
         event.preventDefault()
-        
-        // setLanguage(() => {
-        //   //SUGERENCIA: Función que cambia de un idioma a otro (haciendo clic en el botón)
-        //     if(languages === languages.english) setLanguages(languages.spanish)
-        //     if(languages === languages.spanish) setLanguages(languages.portuguese)
-        //     if(languages === languages.portuguese) setLanguages(languages.english)
-        // })
+
         if(language.id === languages.english.id) setLanguage(languages.spanish)
         
         if(language.id === languages.spanish.id) setLanguage(languages.portuguese)
@@ -59,8 +53,8 @@ const LanguageContext = ({children}) => {
         event.preventDefault()
         
         if(theme.background === themes.dark.background) setTheme(themes.light)
+
         if(theme.background === themes.light.background) setTheme(themes.dark)
-        
     }
 
 

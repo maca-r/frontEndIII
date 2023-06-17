@@ -4,12 +4,6 @@ import { useLanguagesStates } from '../Context'
 
 
 const Navbar = () => {
-    /* DICA: Descomente esse bloco de código, quando "App.jsx" tiver um provider
-    COnsejo: Descomentar este bloque de código, cuando "App.jsx" ya tenga un proveedor
-    const { language, handleChangeLA } = useContext(LanguageContext)
-    const {text} = language
-    
-    */
 
     const {language, theme, handleChangeLA, handleChangeTheme} = useLanguagesStates()
     
