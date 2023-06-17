@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import "../App.css"
-import LanguageContext from '../context'
+import { useLanguagesStates } from '../Context'
+
 
 const Navbar = () => {
     /* DICA: Descomente esse bloco de código, quando "App.jsx" tiver um provider
@@ -9,12 +10,17 @@ const Navbar = () => {
     const {text} = language
     
     */
+
+    const {language, theme, handleChangeLA, handleChangeTheme} = useLanguagesStates()
+    
     return (
         <div className="navbar">
             {/* CONSEJO: Renderizar la información traida del contexto de forma dinamica */}
-            <p>Início</p> 
-            <p>Idioma atual: PTBR</p>
-            <button>Alterar idioma</button>
+            <p>{language.text.home}</p> 
+            <p>Idioma actual: {language.id}</p>
+            <button className='buttonLA' onClick={handleChangeLA}>{language.text.buttonL}</button>
+            <button className={`toggle-button ${theme.background === "black" ? 'dark' : 'light'}`} onClick={handleChangeTheme}>{language.text.buttonT} </button>
+            
         </div>
     )
 }
